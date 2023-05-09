@@ -24,7 +24,7 @@ int[] GetRandomArray(int length, int minValue, int maxValue)
     Random rnd = new Random();
     for(int i = 0; i < length; i++)
     {
-        array[i] = rnd.Next(minValue, maxValue);
+        array[i] = rnd.Next(minValue, maxValue + 1);
     }
     return array;
 }
@@ -47,5 +47,8 @@ int maxValue = Prompt("Введите максимально-допустимо�
 int[] array = GetRandomArray(Length, minValue, maxValue);
 
 Console.WriteLine(string.Join(", ", array));
-Console.WriteLine(SumOddElemens(array, true));
-Console.WriteLine(SumPositivElemens(array, false));
+Console.WriteLine("");
+Console.WriteLine($"Сумма всех чисел стоящих на не четных позициях в массиве равна: {SumOddElemens(array, true)}");
+Console.WriteLine("");
+Console.WriteLine($"Сумма всех чисел стоящих на четных позициях в массиве равна: {SumOddElemens(array, false)}");
+Console.WriteLine("");

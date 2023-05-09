@@ -10,10 +10,11 @@
 6) печать резульата метода , на поиск суммы четных и не четных .
       
                    пока я писал вдруг вспомнил , что необходимо выполнить совсем иное , пишу метод для подсчета чентых и не четных елементов
-
+7) метод подсчета четных и нечетных чисел в маасиве
+8) печать результат для всех случаев                   
 */
 
-int Prompt(string massage)
+int Prompt(string massage)                            // с помощю Prompt можно задать длинну массива, или другие характеристики если потребуется
 {
     System.Console.Write(massage);
     string stringInput = System.Console.ReadLine()!;
@@ -21,7 +22,7 @@ int Prompt(string massage)
     return result;
 }
 
-int[] GetRandomArray(int length)
+int[] GetRandomArray(int length)          
 {
     int[] array = new int [length];
     Random rnd = new Random();
@@ -32,7 +33,7 @@ int[] GetRandomArray(int length)
     return array;
 }
 
-int SumEvenNumbers(int[] array, bool even = true)
+int SumEvenNumbers(int[] array, bool even = true)   // нахождение суммы всех четный и нечетных элементов массива
 {
     int sum = 0;
     for(int i = 0; i < array.Length; i++)
@@ -43,7 +44,7 @@ int SumEvenNumbers(int[] array, bool even = true)
     return sum;
 }
 
-int CountEvenNumbers(int[] array, bool even = true)
+int CountEvenNumbers(int[] array, bool even = true)   // подсчет четных и нечетных элементов массива
 {
     int count = 0;
     for(int i = 0; i < array.Length; i++)
@@ -54,18 +55,16 @@ int CountEvenNumbers(int[] array, bool even = true)
     return count;
 }
 
-
-
-int length = Prompt("Введите длину массива: ");
+int length = Prompt("Для печати случайного массива введите длинну: ");
 Console.WriteLine("");
-int[] array = GetRandomArray(length);
+int[] array = GetRandomArray(length);                             // создание переменных 
 int count = CountEvenNumbers(array);
 
 Console.WriteLine(string.Join(",", array));
 Console.WriteLine("");
 Console.WriteLine($"Сумма всех четных чисел массива = {SumEvenNumbers(array, true)}");
 Console.WriteLine("");
-Console.WriteLine($"Сумма всех нечетных чисел массива = {SumEvenNumbers(array, false)}");
+Console.WriteLine($"Сумма всех нечетных чисел массива = {SumEvenNumbers(array, false)}");                // печать резултата
 Console.WriteLine("");
 Console.WriteLine($"Колличество четных чисел массива = {CountEvenNumbers(array, true)}");
 Console.WriteLine("");
