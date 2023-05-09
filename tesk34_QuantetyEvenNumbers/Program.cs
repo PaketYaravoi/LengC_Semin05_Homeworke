@@ -33,7 +33,7 @@ int[] GetRandomArray(int length)
     return array;
 }
 
-int SumEvenNumbers(int[] array, bool even = true)   // нахождение суммы всех четный и нечетных элементов массива
+int SumEvenNumbers(int[] array, bool even = true)   // нахождение суммы четных чисел в массиве и нечетных элементов массива
 {
     int sum = 0;
     for(int i = 0; i < array.Length; i++)
